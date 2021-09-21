@@ -16,6 +16,8 @@ ${URL}              http://127.0.0.1:4000
 Start server and create new session
     Start server
     Create new session
+    The number of assignments in the system is "0"
+
 
 Create new session
     Create Session  assignment3  ${URL}
@@ -42,6 +44,23 @@ Shutdown server
     ${resp}=    POST On Session  assignment3    /shutdown
     [Return]    ${resp}
 
+
+
+Clean up and shutdown server
+    We delete the assignment with name "NewName" in cleanup
+    We delete the assignment with name "AName" in cleanup
+    We delete the assignment with name "UpdatedName" in cleanup
+    The number of assignments in the system is "0"
+    Shutdown server
+
+We delete the assignment with name "${name}" in cleanup
+    ${resp}=    Delete assignment    ${name}
+
+
+The number of assignments in the system is "0"
+    ${list}=    Get list of assignments
+    ${num_items}=   Get length  ${list}
+    Should Be Equal As Integers    0    ${num_items}
 
 
 An assignment with name "${name}" does not exist in the system

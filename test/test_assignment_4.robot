@@ -2,7 +2,7 @@
 Resource    assignment4_high_level_keywords.robot
 
 Suite Setup     Start server and create new session
-Suite Teardown  Shutdown server
+Suite Teardown  Clean up and shutdown server
 
 *** Test Cases ***
 Scenario: Create a new assignment
