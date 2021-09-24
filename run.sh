@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export FLASK_APP=app.py
+export FLASK_APP=app
 export FLASK_ENV=development
+export FLASK_RUN_PORT=4000
 
-python3 app.py
+flask run
