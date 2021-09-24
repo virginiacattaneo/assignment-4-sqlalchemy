@@ -1,4 +1,5 @@
-from app import db, create_app
+from app import db
+#, create_app
 
 if __name__ == "__main__":
     print("Creating DB tables")
